@@ -1,5 +1,0 @@
-- cmd: function fish_prompt\nset_color $fish_color_cwd\necho -n (basename $PWD)\nset_color normal\necho -n ' ) '\nend
-   when: 1444354486
-   paths:
-    - echo
-    - echo
