@@ -1,0 +1,6 @@
+*~
+.DS_Store
+/salt-master/vagrant/.vagrant/
+vagrant/.vagrant/
+vagrant/.vagrant/*.*
+/.vagrant

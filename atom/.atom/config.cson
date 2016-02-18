@@ -1,0 +1,65 @@
+"*":
+  core:
+    closeEmptyWindows: false
+    disabledPackages: [
+      "archive-view"
+      "autocomplete-atom-api"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autocomplete-plus"
+      "autocomplete-snippets"
+      "background-tips"
+      "deprecation-cop"
+      "encoding-selector"
+      "image-view"
+      "language-clojure"
+      "language-coffee-script"
+      "language-csharp"
+      "language-html"
+      "language-go"
+      "language-git"
+      "language-gfm"
+      "language-css"
+      "language-java"
+      "language-javascript"
+      "language-less"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-property-list"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-sass"
+      "language-shellscript"
+      "language-source"
+      "language-sql"
+      "language-toml"
+      "language-xml"
+      "link"
+      "markdown-preview"
+      "open-on-github"
+      "package-generator"
+      "snippets"
+      "styleguide"
+      "symbols-view"
+      "welcome"
+    ]
+    projectHome: "/Users/zane/Repos"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Ubuntu Mono"
+    invisibles: {}
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "bb4156aa-ec90-1db7-0fb7-d2cf3344d937"
+  welcome:
+    showOnStartup: false
