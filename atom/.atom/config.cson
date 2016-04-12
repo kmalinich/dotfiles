@@ -1,5 +1,12 @@
 "*":
+  "activate-power-mode":
+    particles:
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake: {}
   core:
+    allowPendingPaneItems: false
     closeEmptyWindows: false
     disabledPackages: [
       "archive-view"
@@ -44,6 +51,12 @@
       "styleguide"
       "symbols-view"
       "welcome"
+      "timecop"
+      "spell-check"
+      "metrics"
+      "grammar-selector"
+      "exception-reporting"
+      "highlight-column"
     ]
     projectHome: "/Users/zane/Repos"
     themes: [
@@ -52,6 +65,7 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
+    fontSize: 18
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -61,5 +75,34 @@
     tabType: "soft"
   "exception-reporting":
     userId: "bb4156aa-ec90-1db7-0fb7-d2cf3344d937"
+  "fold-functions": {}
+  "highlight-column": {}
+  "highlight-selected": {}
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+  "status-bar": {}
+  tabs: {}
+  "todo-show": {}
+  "tree-view": {}
   welcome:
     showOnStartup: false
+".console.python.text":
+  editor:
+    preferredLineLength: 100
+".python.regexp.source":
+  editor:
+    preferredLineLength: 100
+".python.source":
+  editor:
+    preferredLineLength: 100
+".python.text.traceback":
+  editor:
+    preferredLineLength: 100

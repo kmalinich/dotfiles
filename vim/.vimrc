@@ -4,7 +4,9 @@ set showbreak=+++
 set textwidth=100
 set showmatch
 set visualbell
- 
+set wrap
+set nolist
+
 set hlsearch
 set smartcase
 set ignorecase
