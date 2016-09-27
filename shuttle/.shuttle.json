@@ -9,5 +9,131 @@
 	"show_ssh_config_hosts": true,
 	"ssh_config_ignore_hosts": [],
 	"ssh_config_ignore_keywords": [],
-	"hosts": []
+	"hosts": [{
+            "Local-Dev": [
+                {
+                    "name": "Start Auth a",
+                    "cmd": ". /Users/dean.hutton/Workdir/scripts/auth.sh"
+                },
+                {
+                    "name": "Start Mongo",
+                    "cmd": ". /Users/dean.hutton/Workdir/scripts/mongo.sh"
+                },
+                    {
+                        "Security": [
+                            {
+                                "name": "Start Redis",
+                                "cmd": ". /Users/dean.hutton/Workdir/scripts/security/redis.sh"
+                            },
+                            {
+                                "name": "Start Celery1",
+                                "cmd": ". /Users/dean.hutton/Workdir/scripts/security/celery1.sh"
+                            },
+
+                            {
+                                "name": "Start Celery2",
+                                "cmd": ". /Users/dean.hutton/Workdir/scripts/security/celery2.sh"
+                            },
+
+
+                            {
+                                "name": "START ALL",
+                                "cmd": "osascript /Users/dean.hutton/Workdir/scripts/security/run_setup.scpt"
+                            },
+
+                            {
+                                "name": "Start Tox",
+                                "cmd": ". /Users/dean.hutton/Workdir/scripts/security/tox.sh"
+                            },
+                        ],
+                    },
+            ],
+
+            "Atomic-OpenStack-Dev": [
+                {
+                    "Replication": [
+                        {
+                            "name": "mongodb1",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.128"
+                        },
+
+                        {
+                            "name": "mongodb2",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.129"
+                        },
+
+                        {
+                            "name": "arbiter1",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.130"
+                        },
+                    ],
+                },
+
+                {
+                    "name": "Auth Deployment",
+                    "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.199"
+                },
+                {
+                    "name": "CDN Deployment",
+                    "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.20"
+                },
+
+                {
+                    "name": "Security Deployment",
+                    "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.227"
+                },
+
+                {
+                    "name": "Object Deployment",
+                    "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.230"
+                },
+
+                {
+                    "name": "Doc Server",
+                    "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/base-kp.pem centos@10.10.2.241"
+                },
+            ],
+
+
+            "Micel": [
+                {
+                    "Dean-Machines": [
+                            {
+                                "name": "Auth-API Deployment",
+                                "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.199"
+                            },
+                    ],
+                    "Security-API": [
+                        {
+                            "name": "OpenStack OpenVAS",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.29"
+                        },
+
+                        {
+                            "name": "OpenStack Kali-Linux",
+                            "cmd": "ssh root@10.10.3.18"
+                        },
+
+                        {
+                            "name": "OpenStack Centos6",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.32"
+                        },
+
+                        {
+                            "name": "OpenStack Centos7",
+                            "cmd": "ssh -i /Users/dean.hutton/Workdir/Keys/OpenStack/dhutton.pem centos@10.10.3.33"
+                        },
+                    ],
+                }
+            ],
+
+            "Vagrant": [
+                {
+                    "name": "Centos7",
+                    "cmd": "ssh vagrant@127.0.0.1 -p 2222"
+                },
+            ],
+        },
+    ]
+  }
 }

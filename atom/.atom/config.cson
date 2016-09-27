@@ -5,6 +5,9 @@
       spawnCount: {}
       totalCount: {}
     screenShake: {}
+  "atom-beautify":
+    general:
+      _analyticsUserId: "1c4a0a0f-5292-42b2-8f77-ffbdb8ef9c12"
   core:
     allowPendingPaneItems: false
     closeEmptyWindows: false
@@ -35,7 +38,6 @@
       "language-perl"
       "language-php"
       "language-property-list"
-      "language-ruby"
       "language-ruby-on-rails"
       "language-sass"
       "language-shellscript"
@@ -52,22 +54,29 @@
       "symbols-view"
       "welcome"
       "timecop"
-      "spell-check"
       "metrics"
       "grammar-selector"
       "exception-reporting"
       "highlight-column"
     ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "__pycache__"
+    ]
     projectHome: "/Users/zane/Repos"
     themes: [
       "one-dark-ui"
-      "solarized-dark-syntax"
+      "base16-tomorrow-dark-theme"
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 18
+    fontSize: 16
     invisibles: {}
-    preferredLineLength: 100
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -78,6 +87,15 @@
   "fold-functions": {}
   "highlight-column": {}
   "highlight-selected": {}
+  linter:
+    errorPanelHeight: 131
+    ignoreMatchedFiles: "/**/*.{pyc}"
+    inlineTooltipInterval: 100
+    lintOnFlyInterval: 100
+  "linter-pylint":
+    executable: "/Users/zane/.virtualenvs/auth/bin/pylint"
+    pythonPath: "/Users/zane/.virtualenvs/auth/bin/python"
+    rcFile: "%p/pylint.rc"
   minimap:
     plugins:
       bookmarks: true
@@ -89,18 +107,28 @@
       selection: true
       selectionDecorationsZIndex: 0
   "status-bar": {}
-  tabs: {}
+  tabs:
+    addNewTabsAtEnd: true
+  "terminal-plus":
+    toggles:
+      autoClose: true
+      runInsertedText: false
   "todo-show": {}
-  "tree-view": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".c.source":
+  editor:
+    tabLength: 4
 ".console.python.text":
   editor:
     preferredLineLength: 100
-".python.regexp.source":
+".json.source":
   editor:
-    preferredLineLength: 100
-".python.source":
+    tabLength: 4
+".python.regexp.source":
   editor:
     preferredLineLength: 100
 ".python.text.traceback":
