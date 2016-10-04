@@ -67,6 +67,7 @@
       "._*"
       "Thumbs.db"
       "__pycache__"
+      ".pyc"
     ]
     projectHome: "/Users/zane/Repos"
     themes: [
@@ -89,26 +90,33 @@
   "highlight-selected": {}
   linter:
     errorPanelHeight: 131
-    ignoreMatchedFiles: "/**/*.{pyc}"
     inlineTooltipInterval: 100
     lintOnFlyInterval: 100
+    showErrorTabLine: true
   "linter-pylint":
-    executable: "/Users/zane/.virtualenvs/auth/bin/pylint"
-    pythonPath: "/Users/zane/.virtualenvs/auth/bin/python"
+    executable: "/Users/zane.mingee/.virtualenvs/libauth/bin/pylint"
+    pythonPath: "/Users/zane.mingee/.virtualenvs/libauth/bin/python"
     rcFile: "%p/pylint.rc"
   minimap:
     plugins:
       bookmarks: true
       bookmarksDecorationsZIndex: 0
+      codeglance: true
+      codeglanceDecorationsZIndex: 0
       cursorline: true
       cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
       selection: true
       selectionDecorationsZIndex: 0
   "status-bar": {}
   tabs:
     addNewTabsAtEnd: true
+    enableVcsColoring: true
   "terminal-plus":
     toggles:
       autoClose: true
@@ -134,3 +142,6 @@
 ".python.text.traceback":
   editor:
     preferredLineLength: 100
+".salt.source":
+  editor:
+    tabLength: 4
