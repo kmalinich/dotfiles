@@ -76,7 +76,6 @@
     ]
   editor:
     fontFamily: "Ubuntu Mono"
-    fontSize: 16
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -94,8 +93,8 @@
     lintOnFlyInterval: 100
     showErrorTabLine: true
   "linter-pylint":
-    executable: "/Users/zane.mingee/.virtualenvs/libauth/bin/pylint"
-    pythonPath: "/Users/zane.mingee/.virtualenvs/libauth/bin/python"
+    executable: "/Users/zane/.virtualenvs/compute/bin/pylint"
+    pythonPath: "/Users/zane/.virtualenvs/compute/bin/python"
     rcFile: "%p/pylint.rc"
   minimap:
     plugins:
