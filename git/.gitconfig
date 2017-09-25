@@ -1,29 +1,23 @@
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [user]
 	name = Zane Mingee
 	email = zmingee@outlook.com
-[core]
-	excludesfile = /Users/zane/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+[color]
+	branch = on
+	diff = on
+	interactive = on
+	status = on
 [pull]
 	default = current
 [push]
 	default = current
 [alias]
-        co = checkout
-        ec = config --global -e
-        up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-        cob = checkout -b
-        cm = !git add -A && git commit -m
+	up = pull --rebase --prune
+	co = checkout
+	ec = config --global -e
+	cob = checkout -b
+	cm = !git add -A && git commit -m
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	prune = fetch --all --prune
+[core]
+	excludesfile = /home/zane/.gitignore_global
