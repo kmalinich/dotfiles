@@ -1,7 +1,0 @@
----
-- !ruby/object:Pomo::Task
-  name: Add/Change logging for vz_migrate.py
-  description: 'NOTE :: This will eventually be added to the logging on Admintools'
-  length: 25
-  running: false
-  complete: true
