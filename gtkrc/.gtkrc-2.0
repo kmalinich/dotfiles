@@ -1,5 +1,6 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/NumixSolarizedDarkBlue/gtk-2.0/gtkrc"
+include "/home/zane/.themes/oomox-Solarized-Dark/gtk-2.0/gtkrc"
+#include "/home/zane/.themes/oomox-solarized-light/gtk-2.0/gtkrc"
 
 style "user-font" {
 	font_name = "Ubuntu 12"

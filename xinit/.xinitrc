@@ -32,11 +32,34 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xset s off -dpms
-xbindkeys
+# Fonts
+xset +fp /home/zane/.fonts
+xset fp rehash
 xrandr --dpi 96
-xrandr --output DP-2 --scale .7x.7
-redshift &
+
+# Turn off DPMS on monitor
+xset dpms 300 300 300
+
+# Set key repeat rate
+xset r rate 200 25
+
+# Start xbindkeys daemon
+xbindkeys
+
+# Start xautolock
+xautolock -detectsleep \
+    -notify     30  -notifier   "xset dpms force off" \
+    -time       5   -locker     "/usr/bin/slock" \
+    -killtime   30  -killer     "systemctl hibernate" &
+
+# Start unclutter daemon
 unclutter &
+
+# Start dwm status bar daemon
 /usr/local/bin/statusbar &
+
+# Set wallpaper
+$HOME/.fehbg &
+
+# Start dwm
 exec $HOME/bin/startdwm

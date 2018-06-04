@@ -10,7 +10,7 @@ export BASH_ENV_DIR_PROFILE_D="${BASH_ENV_DIR}/profile.d"
 
 # Source profile(s)
 [[ -t 0 ]] && echo -en "Loading...\\r"
-for FILE in $(find "${BASH_ENV_DIR_PROFILE_D}" -maxdepth 1 -name '[0-9][0-9]-*' -type f | sort); do
+for FILE in $(find -L "${BASH_ENV_DIR_PROFILE_D}" -maxdepth 1 -name '[0-9][0-9]-*' -type f | sort); do
     . "${FILE}"
 done
 

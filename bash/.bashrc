@@ -22,7 +22,7 @@ _validate_before_source
 # done; unset FILE
 
 # Build array of files under ~/.kdm/rc.d and source them
-mapfile -t ARRAY_SOURCE_RC_D < <(ls -Fh1 "${BASH_ENV_DIR_RC_D}/"* 2> /dev/null)
+mapfile -t ARRAY_SOURCE_RC_D < <(ls -h1 "${BASH_ENV_DIR_RC_D}/"* 2> /dev/null)
 for FILE in "${ARRAY_SOURCE_RC_D[@]}"; do
 	. "${FILE}"
 done; unset FILE

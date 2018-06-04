@@ -2,96 +2,129 @@
 #keystate_scrolllock = enable
 #keystate_capslock = enable
 
-#Backlight Up
+############
+# Keyboard #
+############
+
+## Backlights ##
+#
+# MBP backlight Up
+# NVIDIA
 "echo "scale=4;$(cat /sys/class/backlight/acpi_video0/brightness)+5" | bc -l >> /sys/class/backlight/acpi_video0/brightness"
     m:0x0 + c:233
     XF86MonBrightnessUp
+# NOUVEAU
+# "gmux_backlight +5"
+#     m:0x0 + c:233
+#     XF86MonBrightnessUp
 
-#Backlight Down
+# MBP backlight Down
+# NVIDIA
 "echo "scale=4;$(cat /sys/class/backlight/acpi_video0/brightness)-5" | bc -l >> /sys/class/backlight/acpi_video0/brightness"
     m:0x0 + c:232
     XF86MonBrightnessDown
+# NOUVEAU
+# "gmux_backlight -5"
+#     m:0x0 + c:232
+#     XF86MonBrightnessDown
 
-#Pulseaudio Volume Up
-"pactl set-sink-volume @DEFAULT_SINK@ +2%"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume
 
-#Pulseaudio Volume Down
-"pactl set-sink-volume @DEFAULT_SINK@ -2%"
-    m:0x0 + c:122
-    XF86AudioLowerVolume
-
-#Pulseaudio Volume Mute
-"/usr/bin/pulseaudio-ctl mute"
-    m:0x0 + c:121
-    XF86AudioMute
-
-#cmus-remote next
-"/usr/bin/playerctl next"
-    m:0x0 + c:171
-    XF86AudioNext
-
-#cmus-remote previous
-"/usr/bin/playerctl previous"
-    m:0x0 + c:173
-    XF86AudioPrev
-
-#cmus-remote play
-"/usr/bin/playerctl play-pause"
-    m:0x0 + c:172
-    XF86AudioPlay
-
-#surf
-"env GTK_THEME=Adwaita:light /usr/local/bin/surf"
-    m:0x8 + c:39
-    Mod2 + s
-
-#slock
-"/usr/bin/slock"
-    m:0x8 + m:0x1 + c:46
-    Mod2 + Shift + l
-
-#terminator
-"/usr/local/bin/st"
-    m:0x8 + c:28
-    Mod2 + t
-
-#Screenshot
-"/usr/bin/gscreenshot"
-    m:0x50 + c:49
-    Mod4 + grave
-
-#Keyboard Backlight Up
+# Apple keyboard Backlight Up
 "echo "scale=4;$(cat /sys/class/leds/smc::kbd_backlight/brightness)+5" | bc -l >> /sys/class/leds/smc::kbd_backlight/brightness"
     m:0x0 + c:238
     XF86KbdBrightnessUp
 
-#Keyboard Backlight Down
+# Apple keyboard Backlight Down
 "echo "scale=4;$(cat /sys/class/leds/smc::kbd_backlight/brightness)-5" | bc -l >> /sys/class/leds/smc::kbd_backlight/brightness"
     m:0x0 + c:237
     XF86KbdBrightnessDown
 
-#Close program
-"xvkbd -text "\A\[Shift]C""
-    release + b:15
 
+## ALSA ##
+#
+# ALSA volume up
+"amixer -c 1 sset Master 5+"
+    XF86AudioRaiseVolume
+
+# ALSA volume down
+"amixer -c 1 sset Master 5-"
+    XF86AudioLowerVolume
+
+# Alsa volume mute
+"amixer set Master toggle"
+    XF86AudioMute
+
+
+## Pulseaudio ##
+#
+# Pulseaudio Volume Up
+#"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+#   XF86AudioRaiseVolume
+
+# Pulseaudio Volume Down
+#"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+#   XF86AudioLowerVolume
+
+# Pulseaudio Volume Mute
+#"/usr/bin/pulseaudio-ctl mute"
+#   XF86AudioMute
+
+## Media Controls ##
+#
 # Next song
-"xvkbd -text "\[XF86AudioNext]""
-    release + b:13
+"/usr/bin/playerctl next"
+   XF86AudioNext
 
 # Previous song
-"xvkbd -text "\[XF86AudioPrev]""
-    release + b:14
+"/usr/bin/playerctl previous"
+   XF86AudioPrev
 
-# Play/Pause
-"xvkbd -text "\[XF86AudioPlay]""
-    release + b:10
+# Play/Pause song
+"/usr/bin/playerctl play-pause"
+   XF86AudioPlay
 
-#Pulseaudio Volume Up
-"xvkbd -text "\[XF86AudioRaiseVolume]""
-    release + b:11
+# Play/Pause song
+"/usr/bin/playerctl play-pause"
+   XF86AudioPause
 
-#Pulseaudio Volume Down
-"xvkbd -text "\[XF86AudioLowerVolume]""
-    release + b:12
+# Lock screen with slock
+"/usr/local/bin/slock"
+    Mod4 + l
+
+# Launch surf
+"env GTK_THEME=Adwaita:light /usr/local/bin/surf"
+    Mod4 + s
+
+# Launch qutebrowser
+"/usr/bin/qutebrowser"
+    Mod4 + q
+
+# Launch Firefox
+"/usr/bin/firefox-developer"
+    Mod4 + f
+
+# Launch terminator
+"/usr/local/bin/st"
+    Mod4 + t
+
+# Launch gscreenshot
+"/usr/bin/gscreenshot"
+    Mod4 + grave
+
+# Bind Shift + BackSpace for usability
+#"xdotool key --clearmodifers BackSpace"
+#    Shift + BackSpace
+#    BackSpace
+
+
+#########################
+# Logitech MX Master 2S #
+#########################
+
+# Next song
+"xdotool key XF86AudioNext"
+   b:9 + Release
+
+# Previous song
+"xdotool key XF86AudioPrev"
+   b:8 + Release
