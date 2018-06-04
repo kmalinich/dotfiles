@@ -1,0 +1,10 @@
+{
+  "4069:4D35450B": {
+    "_name": "Wireless Mouse MX Master 2S",
+    "dpi": "1250",
+    "hires-smooth-invert": true,
+    "hires-smooth-resolution": false,
+    "smart-shift": 20
+  },
+  "_version": "0.9.2"
+}

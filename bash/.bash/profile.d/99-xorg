@@ -1,0 +1,9 @@
+# bash profile: xorg
+#
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

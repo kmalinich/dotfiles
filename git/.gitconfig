@@ -1,6 +1,6 @@
 [user]
 	name = Zane Mingee
-	email = zmingee@outlook.com
+	email = z.mingee@gmail.com
 [color]
 	branch = on
 	diff = on
@@ -19,5 +19,13 @@
 	undo = reset HEAD~1 --mixed
 	amend = commit -a --amend
 	prune = fetch --all --prune
+	dp = diff --patch --color=always
+	s = status
+	sv = status -v
+	svv = status -vv
+	clr = !git -c color.status=always -c color.diff=always
+	a = add
+	ap = add -p
+	pl = log --pretty=\"tformat:[%C(yellow)%h%C(reset)][%C(blue)%aI%C(reset)][%cn]: %C(cyan)%s%C(reset)\"
 [core]
 	excludesfile = /home/zane/.gitignore_global

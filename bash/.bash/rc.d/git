@@ -1,0 +1,52 @@
+# bash rc: git
+#
+
+git-ch () {
+    usage=$(printf %s%s%s\
+        "Usage: git-ch [num commits]\\n"\
+        "\\n"\
+        "git-ch will loop over the last X commits and show it's diff\n"
+    )
+
+    if [ -z "$1" ]; then
+        num_commits=10
+    elif [ "$#" -ne "1" ]; then
+        printf "$usage"
+        printf "\nInvalid number of parameters\n"
+    else
+        num_commits=$1
+    fi
+
+    current_branch=$(git status -s -b | grep -- "##" | awk '{print $2}')
+    commits=$(git rev-list --max-count=$num_commits $current_branch)
+    for commit in $commits
+    do
+        git show --pretty="tformat:[%C(yellow)%h%C(reset)][%C(blue)%aI%C(reset)][%cn]: %C(cyan)%s%C(reset)" $commit --color=always | less -R;
+    done
+}
+
+git-open () {
+    usage=$(printf "%s\n\n%s\n\n" \
+        "Usage: git-open [project-name]" \
+        "git-open will open the git repository for the specified project"
+    )
+
+    if [ -z "$1" ]; then
+        printf "$usage"
+        printf "\nERR: Invalid number of parameters\n"
+        return
+    elif [ "$#" -ne "1" ]; then
+        printf "$usage"
+        printf "\nERR: Invalid number of parameters\n"
+        return
+    else
+        project=$1
+    fi
+
+    cd "/home/zane/Repos/$1"
+    reset
+    printf "%s\n" "Now in $PWD"
+}
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

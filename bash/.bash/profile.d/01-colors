@@ -1,0 +1,23 @@
+# bash profile: colors
+#
+
+CLR_RED="\[\033[0;31m\]"
+CLR_GRN="\[\033[0;32m\]"
+CLR_YLW="\[\033[0;33m\]"
+CLR_BLU="\[\033[0;34m\]"
+CLR_MGT="\[\033[0;35m\]"
+CLR_CYN="\[\033[0;36m\]"
+CLR_WHT="\[\033[0;37m\]"
+
+CLR_RED_LITE="\[\033[1;31m\]"
+CLR_GRN_LITE="\[\033[1;32m\]"
+CLR_YLW_LITE="\[\033[1;33m\]"
+CLR_BLU_LITE="\[\033[1;34m\]"
+CLR_MGT_LITE="\[\033[1;35m\]"
+CLR_CYN_LITE="\[\033[1;36m\]"
+CLR_WHT_LITE="\[\033[1;37m\]"
+
+CLR_RST="\[\033[0m\]"
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

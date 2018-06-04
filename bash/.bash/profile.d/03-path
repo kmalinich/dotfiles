@@ -1,0 +1,17 @@
+# bash profile: path
+#
+
+ARRAY_PATH=(
+"${HOME}/bin"
+)
+
+for ENTRY in "${ARRAY_PATH[@]}"; do
+    # Add entry from array if it is present and a directory
+    [[ -d ${ENTRY} ]] && PATH="${PATH}${PATH+:}${ENTRY}"
+done
+
+# Remove duplicates from PATHs
+PATH=$(echo "${PATH}" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

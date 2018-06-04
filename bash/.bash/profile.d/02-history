@@ -1,0 +1,53 @@
+# bash profile: history
+#
+
+# Set bash history size to unlimited
+export HISTFILESIZE=
+export HISTSIZE=
+
+# Set bash history format
+export HISTTIMEFORMAT="[%F %T] "
+
+# Set history to append
+shopt -s histappend
+
+# History control setup
+# http://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history
+# Ignore/erase duplicates and space-prefixed commands ' ls'
+export HISTCONTROL="ignoredups:ignorespace"
+
+# Ignore bland commands
+ARRAY_HISTIGNORE=(
+..
+[bf]g
+cd
+clear
+dc
+dl
+dt
+env
+env-sort
+exit
+screen
+g-gi
+g-gs
+g-gu
+l
+l.
+l1
+la
+ll
+ll.
+lld
+lll
+ls
+mount
+pwd
+umount
+)
+
+# Generate HISTIGNORE from array
+export HISTIGNORE="$(for IGNORE in ${ARRAY_HISTIGNORE[@]}; do echo -n "${IGNORE}:"; done | sed 's/:$//g'; echo)"
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

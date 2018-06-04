@@ -1,0 +1,9 @@
+# bash profile: virtualenvwrapper
+#
+
+# Source virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
+
+#  vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

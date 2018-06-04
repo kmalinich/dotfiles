@@ -1,0 +1,17 @@
+# bash profile: prompt
+#
+
+# Add trap for non-zero exit code
+EC() {
+    echo -e "\e[0;31m""EXIT: $?" "\e[0m"
+}
+trap EC ERR
+
+# Always write lines to history file
+export PROMPT_COMMAND="history -a"
+
+# Build/Export PS1 prompt
+export PS1="${CLR_CYN}[\h:\W]\\$ ${CLR_RST}"
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

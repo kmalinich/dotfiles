@@ -1,0 +1,7 @@
+# bash profile: thefuck
+#
+
+eval "$(thefuck --alias)"
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

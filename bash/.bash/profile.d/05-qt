@@ -1,0 +1,8 @@
+# bash profile: QT
+#
+
+# Disable QT scaling
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

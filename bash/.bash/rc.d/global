@@ -1,0 +1,47 @@
+# bash rc: global aliases
+#
+
+# Secure
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Convenience
+alias x='exit'
+#alias .='pwd'
+#alias ..='cd ..'
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -l --color=auto --group-directories-first'
+alias lh='ls -lah --color=auto --group-directories-first'
+alias lynx='lynx -accept_all_cookies'
+alias z='sudo su -'
+alias lp='lpass'
+alias lplogin="cat /home/zane/zane-home/.sec/lastpass-artectis.txt | tr -d '\\n' | xclip -selection c && lpass login zmingee@artectis.com"
+alias cloc="cloc . --exclude-dir .git,.venv,conf,docs,tests"
+alias ssh="TERM=xterm-256color ssh"
+alias lsblk="lsblk -p -o NAME,LABEL,SIZE,RO,TYPE,FSTYPE,MOUNTPOINT,PARTUUID,SERIAL"
+alias slock="xset dpms force off && /usr/bin/slock"
+
+# One-liners
+alias cpu-fast='sudo cpupower frequency-set --min 2.4GHz --max 2.4GHz'
+alias cpu-slow='sudo cpupower frequency-set --min 1GHz --max 1GHz'
+alias cpu-mid='sudo cpupower frequency-set --min 1GHz --max 2.3GHz'
+alias gpu-fast='sudo bash -c "echo 0f > /sys/kernel/debug/dri/0/pstate"'
+alias whatismyip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\\< -f 1 | sed -r 's/^( )//'"
+alias gen-mirrors="sudo reflector --country 'United States' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias amiup='ping -c 1 google.com > /dev/null && echo "Yes!"'
+alias wifi-reset="sudo netctl list | grep -P '\\*' | sed -r 's/(\\* )//' | xargs -I NETWORK sudo netctl restart NETWORK"
+alias wifi-stop="sudo netctl list | grep -P '\\*' | sed -r 's/(\\* )//' | xargs -I NETWORK sudo netctl stop NETWORK"
+alias show-todo="grep -rinE -C 3 --color always 'TODO|HACK|FIXME' * 2>&1 | less -R"
+alias clear-cache="sudo bash -c \"sync; echo 3 > /proc/sys/vm/drop_caches\""
+
+# GTK Theming
+alias firefox="GTK_THEME=Adawaita:light /usr/bin/firefox-developer"
+alias mysql-workbench="GTK_THEME=elementary mysql-workbench"
+
+# Misc
+alias slack='LD_PRELOAD=/usr/lib/libcurl.so.3 rib slack'
+alias speedtest-cli='speedtest-cli --server 3128'
+
+
+# vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

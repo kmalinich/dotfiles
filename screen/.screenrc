@@ -1,0 +1,54 @@
+# Sane scrollback buffer
+defscrollback 10000
+
+# Set default shell
+shell "bash"
+
+# 256 colors
+#attrcolor b ".I"                                                                                        
+#termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'                                       
+#defbce on
+term screen-256color
+
+# Fix screen refresh on full screen apps like ``less``
+altscreen on
+
+# Default windows
+screen -ln -t main 0 bash
+screen -ln -t term 1 bash
+screen -ln -t term 2 bash
+screen -ln -t term 3 bash
+screen -ln -t term 4 bash
+
+# Remove PROMPT_COMMANDs
+select 0                                                 
+stuff "source ~/.bashrc; reset^M"
+select 1
+stuff "source ~/.bashrc; reset^M"          
+select 2
+stuff "source ~/.bashrc; reset^M"                  
+select 3
+stuff "source ~/.bashrc; reset^M"                  
+select 4
+stuff "source ~/.bashrc; reset^M"
+select 0 # Reselect first window
+
+# Start window numbering at 1 instead of 0
+bind c screen 1
+bind 0 select 10
+
+# Setup status line
+hardstatus alwayslastline "%c %w"
+hardstatus string "%{= kb}[ %{b}%H %{b}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{b}][%{b} %{b}%Y-%m-%dT%0c:%sEDT %{b}]"
+
+# Do not display the copyright page
+startup_message off
+
+# Turn on the visual bell
+vbell on
+
+# Set CTRL+<RIGHT>/<LEFT> to change active window
+bindkey -k k2 next
+bindkey -k k1 prev
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
