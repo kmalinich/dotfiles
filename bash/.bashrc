@@ -3,13 +3,13 @@
 
 _validate_before_source() {
     # Return if not running interactively
-    [[ $- != *i* ]] && return
+    [[ "${-}" != *"i"* ]] && return
 
-	# Load bash profile if not loaded
-	[[ -z "${BASH_PROFILE_LOADED}" ]] && SOURCE="${HOME}/.bash_profile"
+    # Load bash profile if not loaded
+    [[ -z "${BASH_PROFILE_LOADED}" ]] && SOURCE="${HOME}/.bash_profile"
 
-	[[ -r "${SOURCE}" ]] && . "${SOURCE}"
-	# [[ -n "${BASH_PROFILE_LOADED}" ]] && unset BASH_PROFILE_LOADED
+    [[ -r "${SOURCE}" ]] && . "${SOURCE}"
+    unset SOURCE
 }
 
 _validate_before_source
@@ -24,10 +24,8 @@ _validate_before_source
 # Build array of files under ~/.kdm/rc.d and source them
 mapfile -t ARRAY_SOURCE_RC_D < <(ls -h1 "${BASH_ENV_DIR_RC_D}/"* 2> /dev/null)
 for FILE in "${ARRAY_SOURCE_RC_D[@]}"; do
-	. "${FILE}"
+    . "${FILE}"
 done; unset FILE
-
-echo ".bashrc loaded"
 
 
 # vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 noet :
