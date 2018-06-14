@@ -27,5 +27,7 @@ for FILE in "${ARRAY_SOURCE_RC_D[@]}"; do
 	. "${FILE}"
 done; unset FILE
 
+echo ".bashrc loaded"
+
 
 # vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 noet :

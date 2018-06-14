@@ -1,6 +1,10 @@
 # bash profile: thefuck
 #
 
+if ! hash thefuck > /dev/null 2>&1; then
+    return
+fi
+
 eval "$(thefuck --alias)"
 
 

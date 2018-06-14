@@ -2,8 +2,16 @@
 #
 
 # Source virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME="~/.virtualenvs"
+
+VIRTUALENV_WRAPPER="/usr/bin/virtualenvwrapper.sh"
+
+if [[ ! -s "${VIRTUALENV_WRAPPER}" ]]; then
+    return
+fi
+
+# Bash completions
+source "${VIRTUALENV_WRAPPER}"
 
 
 #  vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :

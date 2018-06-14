@@ -1,8 +1,14 @@
 # bash profile: tmuxinator
 #
 
+TMUXINATOR_COMP="/usr/lib/ruby/gems/2.5.0/gems/tmuxinator-0.11.1/completion/tmuxinator.bash"
+
+if [[ ! -s "${TMUXINATOR_COMP}" ]]; then
+    return
+fi
+
 # Bash completions
-source /usr/lib/ruby/gems/2.5.0/gems/tmuxinator-0.11.1/completion/tmuxinator.bash
+source "${TMUXINATOR_COMP}"
 
 
 # vim: set syntax=sh filetype=sh ts=4 sw=4 tw=0 et :
